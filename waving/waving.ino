@@ -39,14 +39,16 @@ void loop() {
   pwm.setPWM(5, 0, 220);
   delay(1000);
 
-  for (uint16_t i = 295; i < SERVOMAX; i++){
+  for (uint16_t i = 320; i < 360; i++){
     pwm.setPWM(1, 0, i);
+    delay(30);
   }
     
   delay(1000);
 
-  for (uint16_t i = SERVOMAX; i < 295; i--){
+  for (uint16_t i = 360; i < 320; i--){
     pwm.setPWM(1, 0, i);
+    delay(30);
   }
 
 }
