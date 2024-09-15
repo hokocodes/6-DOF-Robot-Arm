@@ -22,33 +22,19 @@ void setup() {
 
 void loop() {
 
-  Serial.println("Moving to minimum position (0°)...");
-  pwm.setPWM(1, 0, 400);  // Move to 0°
-  delay(1000);  // Wait for 1 second
-
-  pwm.setPWM(2, 0, 430);  // Move to 0°
-  delay(1000);  // Wait for 1 second
-
-  pwm.setPWM(3, 0, 450);
-  delay(1000);
 
 
-  pwm.setPWM(5, 0, 115);
-  delay(1000);
-
-  pwm.setPWM(5, 0, 220);
-  delay(1000);
-
-  for (uint16_t i = 320; i < 360; i++){
+  for (uint16_t i = 350; i < SERVOMAX; i++){
     pwm.setPWM(1, 0, i);
-    delay(30);
+    delay(10);
   }
     
-  delay(1000);
+  delay(2000);
 
-  for (uint16_t i = 360; i < 320; i--){
+  for (uint16_t i = SERVOMAX; i > 350; i--){
     pwm.setPWM(1, 0, i);
-    delay(30);
+    delay(10);
   }
+  delay(2000);
 
 }
