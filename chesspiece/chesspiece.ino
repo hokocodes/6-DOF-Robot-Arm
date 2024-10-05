@@ -22,18 +22,29 @@ void setup() {
 
 void loop() {
 
-  for (uint16_t i = SERVOMAX; i > 300; i--){
+  for (uint16_t i = 100; i > 300; i--){
     pwm.setPWM(0, 0, i);
     delay(40);
   }
   delay(2000);
-  // for (uint16_t i = 350; i < SERVOMAX; i++){
+
+  // TWIST OUTER SHOULDER
+
+  // for (uint16_t i = SERVOMAX; i < 300; i++){
   //   pwm.setPWM(1, 0, i);
-  //   delay(10);
+  //   delay(40);
   // }
     
   // delay(2000);
 
+  // for (uint16_t i = 300; i < SERVOMAX; i++){
+  //   pwm.setPWM(1, 0, i);
+  //   delay(40);
+  // }
+    
+  // delay(2000);
+    pwm.setPWM(1, 0, SERVOMAX);
+    delay(2000);
 
 // GO DOWN TO PICK UP OBJECT
   for (uint16_t i = SERVOMAX; i > 370; i--){
@@ -43,7 +54,8 @@ void loop() {
   delay(2000);
 
 // TWIST WRIST
-pwm.setPWM(4, 0, 300);
+  pwm.setPWM(4, 0, 300);
+  delay(2000);
 
 // CLOSE GRIPPER TO PICK UP OBJECT
 
