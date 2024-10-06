@@ -21,8 +21,8 @@ void setup() {
 }
 
 void loop() {
-
-  for (uint16_t i = 100; i > 300; i--){
+//twist base
+  for (uint16_t i = SERVOMAX; i > 300; i--){
     pwm.setPWM(0, 0, i);
     delay(40);
   }
