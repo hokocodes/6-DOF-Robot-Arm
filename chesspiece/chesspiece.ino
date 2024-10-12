@@ -21,6 +21,14 @@ void setup() {
 }
 
 void loop() {
+  pwm.setPWM(1, 0, SERVOMAX);
+  delay(1000);
+  Serial.println("Set arm position");
+
+  pwm.setPWM(3, 0, 430);
+  delay(1000);
+  Serial.println("Set WRIST JOINT");
+
   // GO UP TO PUT SOMEWHERE ELSE
   for (uint16_t i = 370; i < 450; i++){
     pwm.setPWM(2, 0, i);
@@ -35,11 +43,9 @@ void loop() {
   }
   delay(1000);
   Serial.println("Twisted base.");
-    
-  // delay(2000);
-  pwm.setPWM(1, 0, SERVOMAX);
-  delay(1000);
-  Serial.println("Set arm position");
+
+
+
 
 // GO DOWN TO PICK UP OBJECT
   for (uint16_t i = 450; i > 320; i--){
@@ -75,7 +81,7 @@ void loop() {
 
 
 // GO UP TO PUT SOMEWHERE ELSE
-  for (uint16_t i = 320; i < 450; i++){
+  for (uint16_t i = 320; i < 470; i++){
     pwm.setPWM(2, 0, i);
     delay(25);
   }
@@ -94,7 +100,7 @@ void loop() {
 
 
 // GO DOWN TO PICK UP OBJECT
-  for (uint16_t i = 450; i > 320; i--){
+  for (uint16_t i = 470; i > 320; i--){
     pwm.setPWM(2, 0, i);
     delay(25);
   }
