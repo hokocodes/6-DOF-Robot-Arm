@@ -35,7 +35,7 @@ void loop() {
   Serial.println("Set arm position");
 
 // GO DOWN TO PICK UP OBJECT
-  for (uint16_t i = SERVOMAX; i > 370; i--){
+  for (uint16_t i = SERVOMAX; i > 320; i--){
     pwm.setPWM(2, 0, i);
     delay(25);
   }
