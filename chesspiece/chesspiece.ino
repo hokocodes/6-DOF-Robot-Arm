@@ -20,83 +20,85 @@ void setup() {
   delay(10);
 }
 
-void loop() {
+
 //twist base
-  for (uint16_t i = SERVOMAX; i > 300; i--){
-    pwm.setPWM(0, 0, i);
-    delay(25);
-  }
-  delay(1000);
-  Serial.println("Twisted base.");
-    
-  // delay(2000);
-  pwm.setPWM(1, 0, SERVOMAX);
-  delay(1000);
-  Serial.println("Set arm position");
+for (uint16_t i = SERVOMAX; i > 300; i--){
+  pwm.setPWM(0, 0, i);
+  delay(25);
+}
+delay(1000);
+Serial.println("Twisted base.");
+  
+// delay(2000);
+pwm.setPWM(1, 0, SERVOMAX);
+delay(1000);
+Serial.println("Set arm position");
 
 // GO DOWN TO PICK UP OBJECT
-  for (uint16_t i = SERVOMAX; i > 370; i--){
-    pwm.setPWM(2, 0, i);
-    delay(25);
-  }
-  delay(1000);
-  Serial.println("Twisted elbow 1st time");
+for (uint16_t i = SERVOMAX; i > 370; i--){
+  pwm.setPWM(2, 0, i);
+  delay(25);
+}
+delay(1000);
+Serial.println("Twisted elbow 1st time");
 
 // TWIST WRIST
-  pwm.setPWM(4, 0, 300);
-  delay(1000);
-  Serial.println("Twisted wrist");
+pwm.setPWM(4, 0, 300);
+delay(1000);
+Serial.println("Twisted wrist");
 
 // OPEN GRIPPER TO DROP OBJECT
-  for (uint16_t i = 220; i > 115; i--){
-    pwm.setPWM(5, 0, i);
-    delay(25);
-  }
-  delay(2000);
-  Serial.println("Open gripper to drop object 1st time");
+for (uint16_t i = 220; i > 115; i--){
+  pwm.setPWM(5, 0, i);
+  delay(25);
+}
+delay(2000);
+Serial.println("Open gripper to drop object 1st time");
 
 // CLOSE GRIPPER TO PICK UP OBJECT
 
-  for (uint16_t i = 115; i < 220; i++){
-    pwm.setPWM(5, 0, i);
-    delay(25);
-  }
-  delay(1000);
-  Serial.println("Close gripper");
+for (uint16_t i = 115; i < 220; i++){
+  pwm.setPWM(5, 0, i);
+  delay(25);
+}
+delay(1000);
+Serial.println("Close gripper");
 // END GRIPPER 
+
+// GO UP TO DROP OBJECT
+for (uint16_t i = 370; i < SERVOMAX; i++){
+  pwm.setPWM(2, 0, i);
+  delay(25);
+}
+delay(1000);
+Serial.println("Twisted elbow 2nd time");
 
 // TWIST SHOUDLER BASE TO MOVE OBJECT TO THE LEFT OR RIGHT
-  for (uint16_t i = 300; i < SERVOMAX; i++){
-    pwm.setPWM(0, 0, i);
-    delay(25);
-  }
-  delay(1000);
-  Serial.println("Twist base 2nd time");
+for (uint16_t i = 300; i < 360; i++){
+  pwm.setPWM(0, 0, i);
+  delay(25);
+}
+delay(1000);
+Serial.println("Twist base 2nd time");
 
 // OPEN GRIPPER TO DROP OBJECT
-  for (uint16_t i = 220; i > 115; i--){
-    pwm.setPWM(5, 0, i);
-    delay(25);
-  }
-  delay(1000);
-  Serial.println("Open gripper to drop object 2nd time");
+for (uint16_t i = 220; i > 115; i--){
+  pwm.setPWM(5, 0, i);
+  delay(25);
+}
+delay(1000);
+Serial.println("Open gripper to drop object 2nd time");
 
-  // CLOSE GRIPPER TO PICK UP OBJECT
-  for (uint16_t i = 115; i < 220; i++){
-    pwm.setPWM(5, 0, i);
-    delay(25);
-  }
-  delay(1000);
-  Serial.println("Close gripper 2nd time");
+// CLOSE GRIPPER TO PICK UP OBJECT
+for (uint16_t i = 115; i < 220; i++){
+  pwm.setPWM(5, 0, i);
+  delay(25);
+}
+delay(1000);
+Serial.println("Close gripper 2nd time");
 
 // END GRIPPER 
 
-// GO UP TO PUT SOMEWHERE ELSE
-  for (uint16_t i = 370; i < SERVOMAX; i++){
-    pwm.setPWM(2, 0, i);
-    delay(25);
-  }
-  delay(1000);
-  Serial.println("move elbow up");
 
-}
+
+
